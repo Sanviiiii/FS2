@@ -1,0 +1,120 @@
+import React, { useState } from 'react';
+import './App.css';
+function App() {
+const [votes, setVotes] = useState({ option1: 0, option2: 0, option3: 0 });
+const handleVote = (option) => {
+setVotes((prevVotes) => ({
+...prevVotes,
+[option]: prevVotes[option] + 1,
+}));
+};
+return (
+<div className="App">
+<h1>Voting Application</h1>
+<div className="options">
+<div>
+Option 1:
+<button onClick={() => handleVote('option1')}>BJP</button>
+<span>{votes.option1}</span>
+</div>
+<div>
+Option 2:
+<button onClick={() => handleVote('option2')}>Congress</button>
+<span>{votes.option2}</span>
+</div>
+<div>
+Option 3:
+<button onClick={() => handleVote('option3')}>JDS</button>
+<span>{votes.option3}</span>
+</div>
+</div>
+</div>
+);
+}
+export default App;
+
+/*Table form*/
+
+import "./App.css";
+import React, { useState } from "react";
+function App() {
+  const [votes, setVotes] = useState({ option_1: 0, option_2: 0, option_3: 0 });
+  const handleVote = (option) => {
+    setVotes((prevVotes) => ({
+      ...prevVotes,
+      [option]: prevVotes[option] + 1,
+    }));
+  };
+  return (
+    <>
+      <h1>Voting Application</h1>
+      <table>
+        <th>S.no</th>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Option</th>
+        <th>Count</th>
+
+        <tr>
+          <td>1</td>
+          <td>abc</td>
+          <td><img src="congress.png"/></td>
+          <td>
+            <button onClick={() => handleVote("option_1")}>BJP</button>
+          </td>
+          <td>
+            <span>{votes.option_1}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>efg</td>
+          <td>img3</td>
+          <td>
+            <button onClick={() => handleVote("option_2")}>JDS</button>
+          </td>
+          <td>
+            <span>{votes.option_2}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>def</td>
+          <td>img2</td>
+          <td>
+            <button onClick={() => handleVote("option_3")}>Congress</button>
+          </td>
+          <td>
+            <span>{votes.option_3}</span>
+          </td>
+        </tr>
+      </table>
+    </>
+  );
+}
+
+export default App;
+/*CSS*/
+h1 {
+  text-align: center;
+}
+
+table {
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 400px;
+  width: 500px;
+  text-align: center;
+}
+
+table, th, td {
+  border: 0px solid;
+}
+
+td img {
+  max-width: 40%;
+  max-height: 60%; 
+  display: block; 
+  margin: 0 auto; 
+}
